@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
     properties.setWindow(this);
     properties.setCentralWidget(ui->widget);
     properties.setTitle("Sinal de Controle");
@@ -16,18 +17,15 @@ MainWindow::MainWindow(QWidget *parent) :
     properties.setyLabel("Amplitude em unidades de engenharia");
     properties.setPlotSize(0,0, 400, 300);
     properties.font        = "Helvetica";
+    this->grafic = new PlotHandler::plot<double>(X,Y,this->properties);
     this->generatePlot();
 
+    //Contador para função update (identifica a orientação do dispositivo)
     QTimer *timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(updateBannerPos()));
     timer->start(1000);
 
-    m_Banner = CreateQtAdMobBanner();
-    m_Banner->Initialize();
-    m_Banner->SetUnitId("ca-app-pub-2682585457279581/8054389559");
-    m_Banner->SetSize(IQtAdMobBanner::Banner);
-    //m_Banner->AddTestDevice("514ED2E95AD8EECE454CC5565326160A");
-    m_Banner->Show();
+    this->setupBanner();
 }
 
 MainWindow::~MainWindow()
@@ -39,7 +37,7 @@ void MainWindow::keyPressEvent( QKeyEvent * event ){
 
     if( event->key() == Qt::Key_Enter || event->key() == Qt::Key_Return)
     {
-        if(ui->Command->text() != "")
+        /*if(ui->Command->text() != "")
         {
             if(MI.identifyEquality(ui->Command->text().toStdString())){
                 std::string str;
@@ -56,10 +54,9 @@ void MainWindow::keyPressEvent( QKeyEvent * event ){
                 ui->console->append(str.c_str());
             }
             ui->Command->setText("");
-        }
+        }*/
         if(ui->x->text() != "" || ui->y->text() != "")
         {
-            //ui->x->setText("1,3,6");
             this->generatePlot();
 
         }
@@ -82,27 +79,29 @@ void MainWindow::generatePlot()
     X = ui->x->text().toStdString().c_str();
     Y = ui->y->text().toStdString().c_str();
 //  this->grafic->generalPlot(X,Y);
+    ui->tab_2->hide();
     this->grafic = new PlotHandler::plot<double>(X,Y,this->properties);
+    ui->tab_2->show();
+}
 
+void MainWindow::setupBanner()
+{
+    m_Banner = CreateQtAdMobBanner();
+    m_Banner->Initialize();
+    m_Banner->SetUnitId("ca-app-pub-2682585457279581/8054389559");
+    m_Banner->SetSize(IQtAdMobBanner::Banner);
+    //m_Banner->AddTestDevice("514ED2E95AD8EECE454CC5565326160A");
+    m_Banner->Show();
 }
 
 void MainWindow::updateBannerPos()
 {
-    QString qstr = QString::number(geometry().width());
-    ui->x->setText(qstr);
+    //Teste, pegando a resolução da tela e jogando num lineEdit pra visualizar o valor
+    //QString qstr = QString::number(geometry().width());
+    //ui->x->setText(qstr);
 
-    /*if(geometry().width() > geometry().height())
-    {
-        posX = geometry().width();//ui->BannerPos->geometry().center().x();
-        posY = geometry().bottom();//ui->BannerPos->geometry().center().y();
-    }
-    else
-    {
-        posX = geometry().width();//ui->BannerPos->geometry().center().x();
-        posY = geometry().bottom();//ui->BannerPos->geometry().center().y();
-    }*/
-    posX = geometry().center().x() - (m_Banner->GetSizeInPixels().width()/2);//ui->BannerPos->geometry().center().x();
-    posY = geometry().bottom() - 5;//ui->BannerPos->geometry().center().y();
+    posY = geometry().bottom() - 5;
+    posX = geometry().center().x() - (m_Banner->GetSizeInPixels().width()/2);
 
     QPoint position(posX, posY);
     m_Banner->SetPosition(position);

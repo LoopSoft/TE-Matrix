@@ -22,7 +22,6 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     void keyPressEvent(QKeyEvent *);
-    void generatePlot();
 
 private:
     Ui::MainWindow *ui;
@@ -35,6 +34,8 @@ private:
     IQtAdMobBanner* m_Banner;
     IQtAdMobInterstitial* m_Interstitial;
     bool m_Switch;
+    void generatePlot();
+    void setupBanner();
 
 private slots:
     void updateBannerPos();
