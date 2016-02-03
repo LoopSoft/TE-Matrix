@@ -35,6 +35,9 @@ private:
     IQtAdMobBanner* m_Banner;
     IQtAdMobInterstitial* m_Interstitial;
     bool m_Switch;
+
+private slots:
+    void updateBannerPos();
 };
 
 #endif // MAINWINDOW_H

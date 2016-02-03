@@ -88,26 +88,11 @@
            </item>
            <item>
             <widget class="QWidget" name="widget" native="true">
-             <layout class="QVBoxLayout" name="verticalLayout_4">
-              <item>
-               <widget class="QPushButton" name="pushButton">
-                <property name="text">
-                 <string>PushButton</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
+             <layout class="QVBoxLayout" name="verticalLayout_4"/>
             </widget>
            </item>
           </layout>
          </widget>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="bannerView">
-         <property name="text">
-          <string>PushButton</string>
-         </property>
         </widget>
        </item>
       </layout>
