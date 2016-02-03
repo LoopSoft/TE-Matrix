@@ -22,9 +22,12 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     void keyPressEvent(QKeyEvent *);
+    void generatePlot();
+
 private:
     Ui::MainWindow *ui;
-    LinAlg::Matrix<double> A,B,X,Y;
+    int posX,posY;
+    LinAlg::Matrix<double> X,Y;
     PlotHandler::plot<double> *grafic;
     PlotHandler::plotProperties properties;
     MatrixInterface MI;
@@ -32,6 +35,9 @@ private:
     IQtAdMobBanner* m_Banner;
     IQtAdMobInterstitial* m_Interstitial;
     bool m_Switch;
+
+private slots:
+    void updateBannerPos();
 };
 
 #endif // MAINWINDOW_H
