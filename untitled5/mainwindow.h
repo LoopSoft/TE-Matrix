@@ -25,7 +25,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    int posX,posY;
+    int posX,posY, lastFrameWidth, curFrameWidth;
     LinAlg::Matrix<double> X,Y;
     PlotHandler::plot<double> *grafic;
     PlotHandler::plotProperties properties;
@@ -38,7 +38,7 @@ private:
     void setupBanner();
 
 private slots:
-    void updateBannerPos();
+    void Update();
 };
 
 #endif // MAINWINDOW_H

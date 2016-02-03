@@ -66,7 +66,7 @@ template <typename Type>
 void PlotHandler::plot<Type>::generalPlot(LinAlg::Matrix<Type> X, LinAlg::Matrix<Type> Y)
 {
     customPlot = new QCustomPlot(properties.centralWidget);
-    customPlot->setGeometry(QRect(0, 0, this->properties.windowSizeX, this->properties.windowSizeY));
+    customPlot->setGeometry(QRect(0, 0, this->properties.centralWidget->geometry().width(), this->properties.centralWidget->geometry().height()));
 
     // add title layout element:
     if(this->properties.titleFlag)
@@ -119,7 +119,8 @@ template <typename Type>
 void PlotHandler::plot<Type>::generalPlot(LinAlg::Matrix<Type> X)
 {
     customPlot = new QCustomPlot(properties.centralWidget);
-    customPlot->setGeometry(QRect(this->properties.windowPosX, this->properties.windowPosY, this->properties.windowSizeX, this->properties.windowSizeY));
+    customPlot->setGeometry(QRect(0, 0, this->properties.centralWidget->geometry().width(), this->properties.centralWidget->geometry().height()));
+    //customPlot->setGeometry(QRect(this->properties.windowPosX, this->properties.windowPosY, this->properties.windowSizeX, this->properties.windowSizeY));
 
     // add title layout element:
     if(this->properties.titleFlag)
@@ -192,7 +193,8 @@ template <typename Type>
 void PlotHandler::plot<Type>::realTimePlotInit()
 {
     customPlot = new QCustomPlot(this->properties.centralWidget);
-    customPlot->setGeometry(QRect(0,0, this->properties.windowSizeX, this->properties.windowSizeY));
+    customPlot->setGeometry(QRect(0, 0, this->properties.centralWidget->geometry().width(), this->properties.centralWidget->geometry().height()));
+    //customPlot->setGeometry(QRect(0,0, this->properties.windowSizeX, this->properties.windowSizeY));
 
     customPlot->addGraph(); // blue line
     customPlot->graph()->setPen(QPen(Qt::blue));

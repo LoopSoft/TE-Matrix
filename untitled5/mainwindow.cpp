@@ -15,14 +15,14 @@ MainWindow::MainWindow(QWidget *parent) :
     properties.setTitle("Sinal de Controle");
     properties.setxLabel("Tempo em segundos");
     properties.setyLabel("Amplitude em unidades de engenharia");
-    properties.setPlotSize(0,0, 400, 300);
+    properties.setPlotSize(0,0, 400, 00);
     properties.font        = "Helvetica";
     this->grafic = new PlotHandler::plot<double>(X,Y,this->properties);
     this->generatePlot();
 
     //Contador para função update (identifica a orientação do dispositivo)
     QTimer *timer = new QTimer(this);
-    connect(timer, SIGNAL(timeout()), this, SLOT(updateBannerPos()));
+    connect(timer, SIGNAL(timeout()), this, SLOT(Update()));
     timer->start(1000);
 
     this->setupBanner();
@@ -37,7 +37,7 @@ void MainWindow::keyPressEvent( QKeyEvent * event ){
 
     if( event->key() == Qt::Key_Enter || event->key() == Qt::Key_Return)
     {
-        /*if(ui->Command->text() != "")
+        if(ui->Command->text() != "")
         {
             if(MI.identifyEquality(ui->Command->text().toStdString())){
                 std::string str;
@@ -54,7 +54,7 @@ void MainWindow::keyPressEvent( QKeyEvent * event ){
                 ui->console->append(str.c_str());
             }
             ui->Command->setText("");
-        }*/
+        }
         if(ui->x->text() != "" || ui->y->text() != "")
         {
             this->generatePlot();
@@ -94,7 +94,7 @@ void MainWindow::setupBanner()
     m_Banner->Show();
 }
 
-void MainWindow::updateBannerPos()
+void MainWindow::Update()
 {
     //Teste, pegando a resolução da tela e jogando num lineEdit pra visualizar o valor
     //QString qstr = QString::number(geometry().width());
