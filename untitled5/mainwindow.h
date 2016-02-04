@@ -5,6 +5,7 @@
 #include "SistemasdeControle/headers/graphicLibs/plot.h"
 #include "matrixinterface.h"
 #include <QMainWindow>
+#include <splash.h>
 
 namespace Ui {
 class MainWindow;
@@ -39,6 +40,7 @@ private:
 
 private slots:
     void Update();
+    void showHelp();
 };
 
 #endif // MAINWINDOW_H

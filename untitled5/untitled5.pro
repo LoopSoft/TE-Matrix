@@ -5,10 +5,12 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT       += widgets printsupport
+QT       += quick
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-QT += widgets printsupport
+
 
 TARGET = untitled5
 TEMPLATE = app
@@ -17,7 +19,8 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     qcustomplot.cpp \
-    matrixinterface.cpp
+    matrixinterface.cpp \
+    splash.cpp
 
 HEADERS  += mainwindow.h \
     SistemasdeControle/headers/primitiveLibs/LinAlg/matrix.h \
@@ -25,9 +28,11 @@ HEADERS  += mainwindow.h \
     SistemasdeControle/headers/graphicLibs/plot.h \
     SistemasdeControle/src/graphicLibs/plot.hpp \
     qcustomplot.h \
-    matrixinterface.h
+    matrixinterface.h \
+    splash.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    splash.ui
 
 include(QtAdMob/QtAdMob.pri)
 
@@ -48,3 +53,8 @@ ios:
     IOS_PACKAGE_SOURCE_DIR = $$PWD/platform/ios
     ios:QMAKE_INFO_PLIST = $$IOS_PACKAGE_SOURCE_DIR/Info.plist
 }
+
+DISTFILES +=
+
+RESOURCES += \
+    res.qrc

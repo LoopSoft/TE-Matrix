@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "splash.h"
 #include "QtAdMob/QtAdMobBanner.h"
 #include "QtAdMob/QtAdMobInterstitial.h"
 #include <QTimer>
@@ -10,6 +11,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    connect(ui->actionModo_de_Uso, SIGNAL(triggered(bool)), this, SLOT(showHelp()));
+
     properties.setWindow(this);
     properties.setCentralWidget(ui->widget);
     properties.setTitle("Sinal de Controle");
@@ -17,7 +20,6 @@ MainWindow::MainWindow(QWidget *parent) :
     properties.setyLabel("Amplitude em unidades de engenharia");
     properties.setPlotSize(0,0, 400, 00);
     properties.font        = "Helvetica";
-    this->grafic = new PlotHandler::plot<double>(X,Y,this->properties);
     this->generatePlot();
 
     //Contador para função update (identifica a orientação do dispositivo)
@@ -63,6 +65,12 @@ void MainWindow::keyPressEvent( QKeyEvent * event ){
     }
 }
 
+void MainWindow::showHelp()
+{
+    Splash p;
+    p.show();
+}
+
 void MainWindow::generatePlot()
 {
     /*
@@ -100,9 +108,17 @@ void MainWindow::Update()
     //QString qstr = QString::number(geometry().width());
     //ui->x->setText(qstr);
 
-    posY = geometry().bottom() - 5;
-    posX = geometry().center().x() - (m_Banner->GetSizeInPixels().width()/2);
+    if(lastFrameWidth != geometry().width())
+    {
+        posY = geometry().bottom() - 5;
+        posX = geometry().center().x() - (m_Banner->GetSizeInPixels().width()/2);
 
-    QPoint position(posX, posY);
-    m_Banner->SetPosition(position);
+        QPoint position(posX, posY);
+        m_Banner->SetPosition(position);
+
+        lastFrameWidth = geometry().width();
+        ui->tab_2->hide();
+        this->grafic = new PlotHandler::plot<double>(X,Y,this->properties);
+        ui->tab_2->show();
+    }
 }
