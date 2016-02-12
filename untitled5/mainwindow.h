@@ -6,6 +6,7 @@
 #include "matrixinterface.h"
 #include <QMainWindow>
 #include <splash.h>
+#include <sobre.h>
 
 namespace Ui {
 class MainWindow;
@@ -38,10 +39,12 @@ private:
     void generatePlot();
     void setupBanner();
     Splash *help;
+    Sobre *about;
 
 private slots:
     void Update();
     void showHelp();
+    void showAbout();
 };
 
 #endif // MAINWINDOW_H

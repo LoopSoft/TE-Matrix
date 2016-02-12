@@ -1,8 +1,7 @@
 <RCC>
     <qresource prefix="/imgs">
         <file>Logo/SplashScreen.png</file>
+        <file>Logo/LogoTE-Mid.png</file>
     </qresource>
-    <qresource prefix="/">
-        <file>SubWindow.qml</file>
-    </qresource>
+    <qresource prefix="/"/>
 </RCC>

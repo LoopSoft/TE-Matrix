@@ -12,8 +12,8 @@ Splash::Splash(QWidget *parent) :
     container->setMinimumSize(200, 200);
     //container->setMaximumSize(200, 200);
     container->setFocusPolicy(Qt::TabFocus);
-    view->setSource(QUrl("qrc:/SubWindow.qml"));
-    ui->gridLayout->addWidget(container);
+    view->setSource(QUrl("SubWindow.qml"));
+    ui->verticalLayout->addWidget(container);
 }
 
 Splash::~Splash()

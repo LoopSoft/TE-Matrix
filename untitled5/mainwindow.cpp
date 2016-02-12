@@ -11,6 +11,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     connect(ui->actionModo_de_Uso, SIGNAL(triggered(bool)), this, SLOT(showHelp()));
+    connect(ui->actionSobre, SIGNAL(triggered(bool)), this, SLOT(showAbout()));
+
+    ui->menuBar->hide();
+    ui->menuBar->show();
 
     properties.setWindow(this);
     properties.setCentralWidget(ui->widget);
@@ -66,9 +70,17 @@ void MainWindow::keyPressEvent( QKeyEvent * event ){
 
 void MainWindow::showHelp()
 {
-    help = new Splash(this);
-    help->setModal(true);
-    help->show();
+    this->help = new Splash(this);
+    this->help->setModal(true);
+    this->help->showFullScreen();
+}
+
+void MainWindow::showAbout()
+{
+    this->about = new Sobre(this);
+    this->about->setModal(true);
+    this->about->showFullScreen();
+    this->about->showMaximized();
 }
 
 void MainWindow::generatePlot()

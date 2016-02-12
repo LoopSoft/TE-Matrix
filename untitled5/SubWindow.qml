@@ -1,27 +1,38 @@
-import QtQuick 2.4
-import QtQuick.Controls 1.4
+import QtQuick 2.3
+import QtQuick.Controls 1.2
 import QtQuick.Layouts 1.1
 
-SubWindowForm {
+Rectangle {
+//ApplicationWindow {
+    id: root
+    visible: true
+    width: 400
+    height: 300
+    //title: qsTr("Hello World")
+    Button {
+        id: button1
 
+        iconSource: "imgs/LogoTE-Mid.png"
+        text: "Voltar"
+    }
+    /*toolBar: ToolBar {
+        width: parent.width
+        height: parent.height
 
-
-    // @disable-check M16
-    toolBar: ToolBar {
-        /*Image {
-            source: "/imgs/Logo/SplashScreen.png"
-
-        }*/
         RowLayout{
+            id: rowLayout1
+
             Button {
-                anchors.centerIn: parent
-                text: "Push Me"
+                id: button1
+
+                iconSource: "imgs/LogoTE-Mid.png"
+                text: "Voltar"
+                onClicked: root.close()
             }
             Button {
-                anchors.centerIn: parent
                 text: "Push Me"
             }
         }
-    }
+    }*/
 }
 

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>332</width>
-    <height>321</height>
+    <width>485</width>
+    <height>414</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -19,7 +19,29 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout"/>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTextBrowser" name="textBrowser">
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;Tutorial&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:14pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-style:italic; text-decoration: underline;&quot;&gt;Declarando variáve&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;l - Basta atribuir um nome e depois o valor, escrito da seguinte maneira:&lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt; Nome da Variáve&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;l = &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;Valor&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;. &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;	&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;         &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-style:italic; text-decoration: underline;&quot;&gt; Exemplos praticos:&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;	&lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;A = 1&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt; Variável &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;A&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt; terá valor igual a um, sendo uma matriz 	de A(1,1). &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;	&lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;B = 1,2&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt; Variável&lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt; B &lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;terá mais de um valor, sendo uma matriz de B(1,2).  &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;	&lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;C = 1;2 - &amp;gt;&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt; variável &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;C&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt; terá mais de um valor, sendo uma matriz de B(2,1).  &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;	&lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-weight:600;&quot;&gt;A+B -&amp;gt; &lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Mostrará o resultado da operação de soma.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;          &lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;O&lt;/span&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;perações sem atribuição (=) vão fazer as operações e mostrar na tela o valor sem fazer nenhuma atribuição a qualquer uma das variáveis envolvidas. A + B Operações com atribuição, vão fazer as operações e mostrar na tela o valor e atribuir o resultado a variável que estiver antes do operador -&amp;gt; A += B&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>

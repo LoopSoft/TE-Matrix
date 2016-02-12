@@ -20,7 +20,8 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     qcustomplot.cpp \
     matrixinterface.cpp \
-    splash.cpp
+    splash.cpp \
+    sobre.cpp
 
 HEADERS  += mainwindow.h \
     SistemasdeControle/headers/primitiveLibs/LinAlg/matrix.h \
@@ -29,10 +30,12 @@ HEADERS  += mainwindow.h \
     SistemasdeControle/src/graphicLibs/plot.hpp \
     qcustomplot.h \
     matrixinterface.h \
-    splash.h
+    splash.h \
+    sobre.h
 
 FORMS    += mainwindow.ui \
-    splash.ui
+    splash.ui \
+    sobre.ui
 
 include(QtAdMob/QtAdMob.pri)
 
@@ -54,7 +57,8 @@ ios:
     ios:QMAKE_INFO_PLIST = $$IOS_PACKAGE_SOURCE_DIR/Info.plist
 }
 
-DISTFILES +=
+DISTFILES += \
+    SubWindow.qml
 
 RESOURCES += \
     res.qrc
