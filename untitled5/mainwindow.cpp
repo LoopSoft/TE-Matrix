@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "splash.h"
 #include "QtAdMob/QtAdMobBanner.h"
 #include "QtAdMob/QtAdMobInterstitial.h"
 #include <QTimer>
@@ -67,8 +66,9 @@ void MainWindow::keyPressEvent( QKeyEvent * event ){
 
 void MainWindow::showHelp()
 {
-    Splash p;
-    p.show();
+    help = new Splash(this);
+    help->setModal(true);
+    help->show();
 }
 
 void MainWindow::generatePlot()

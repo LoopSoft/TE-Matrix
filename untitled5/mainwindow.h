@@ -37,6 +37,7 @@ private:
     bool m_Switch;
     void generatePlot();
     void setupBanner();
+    Splash *help;
 
 private slots:
     void Update();
